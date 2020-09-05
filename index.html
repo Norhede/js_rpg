@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <style>
+
+        </style>
+    </head>
+    <body onload=populateData()>
+        <!-- Modal shown on page load -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Hello!</p>
+                <p>This is a simple role-playing game that showcase simple functionality created with Javascript.</p>
+                <p>For more information on the technical aspects, read the 'About' tab</p>
+                <p>Play around, and have fun!</p>
+            </div>
+        </div>
+
+        <!-- Navbar -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'character')" id="defaultOpen">Character</button>
+            <button class="tablinks" onclick="openTab(event, 'combat')">Combat</button>
+            <button class="tablinks" onclick="openTab(event, 'itemStatUpgrades')">Item & Stat Upgrades</button>
+            <button class="tablinks" onclick="openTab(event, 'about')">About</button>
+        </div>
+
+        <!-- Tabs -->
+
+        <!-- Character tab -->
+        <div id="character" class="tabcontent">
+            
+            <p id="playerNameId">???</span></p>
+            <table id="characterDataTable">
+                <tr>
+                    <td class="tableLeft">Level:</td>
+                    <td class="tableRight" id="characterLevelId"></td>
+                </tr>
+                <tr>
+                    <td class="tableLeft">Attack Power:</td>
+                    <td class="tableRight" id="characterAttackPowerId"></td>
+                </tr>
+                <tr>
+                    <td class="tableLeft">Defense Power:</td>
+                    <td class="tableRight" id="characterDefensePowerId"></td>
+                </tr>
+                <tr>
+                    <td class="tableLeft">Attack Speed:</td>
+                    <td class="tableRight" id="characterAttackSpeedId"></td>
+                </tr>
+                <tr>
+                    <td class="tableLeft">Health Points:</td>
+                    <td class="tableRight" id="characterHealthPointsId"></td>
+                </tr>
+                <tr>
+                    <td class="tableLeft">Experience:</td>
+                    <td class="tableRight" id="characterExperienceId">?</td>
+                </tr>
+            </table>
+            <!--
+            <button class="button button_green">Start combat!</button>
+            <button class="button button_red">Start combat!</button>
+            <button class="button button_skyblue">Start combat!</button>
+            -->
+        </div>
+
+        <!-- Combat tab -->
+        <div id="combat" class="tabcontent">
+            <p id="combatIntro">Get ready for a fight!</p>
+            <table id="combatTable">
+                <tr>
+                    <td class="tableLeft">Choose what level monster to fight:</td>
+                    <td class="tableRight">
+                        <select id="monsterLevel">
+                            <option class="even" value="1" selected>1</option>
+                            <option class="odd" value="2">2</option>
+                            <option class="even" value="3">3</option>
+                            <option class="odd" value="4">4</option>
+                            <option class="even" value="5">5</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tableLeft">Boss fight?</td>
+                    <td class="tableRight"><input type="checkbox" id="monsterBoss"></td>
+                </tr>
+            </table>
+            <!-- 
+            <form id="combatForm">
+                <p>Choose what level monster to fight:</p>
+                <select id="monsterLevel">
+                    <option class="even" value="1" selected>1</option>
+                    <option class="odd" value="2">2</option>
+                    <option class="even" value="3">3</option>
+                    <option class="odd" value="4">4</option>
+                    <option class="even" value="5">5</option>
+                </select>
+            </form>
+            <p>
+                Do you want to fight a boss? 
+                <input type="checkbox" id="monsterBoss">
+            </p>
+            -->
+            
+            <button class="button button_red" onclick="startCombat()">Start combat!</button>
+            <p>
+                You're fighting a <span id="newCombat">?</span>
+            </p>
+        </div>
+
+        <!-- Upgrades tab -->
+        <div id="itemStatUpgrades" class="tabcontent">
+            <p>You have <span id="combatExperienceTotalId">?</span> exp</p>
+            <p>
+                <select id="statUpgradeSelect" onchange="switchStat()">
+                    <option class="even" value="default" disabled selected hidden>Upgrade stat:</option>
+                    <option class="odd" value="Attack Power">Attack Power</option>
+                    <option class="even" value="Defense Power">Defense Power</option>
+                    <option class="odd" value="Attack Speed">Attack Speed</option>
+                    <option class="even" value="Health Points">Health Points</option>
+                </select>
+            </p>
+            <p>
+                <span id="chooseStat">Cost to upgrade:</span> "999" exp
+                <button id="upgradeStat" class="button button_skyblue">Upgrade</button>
+            </p>
+            <p>You have <span id="combatMaterial1Id"></span> material1, <span id="combatMaterial2Id"></span> material2, <span id="combatMaterial3Id"></span> material3, <span id="combatMaterial4Id"></span> material4</p>
+            <p>
+                <select id="equipUpgradeSelect" onchange="switchEquipment()">
+                    <option class="even" value="default" disabled selected hidden>Upgrade equipment:</option>
+                    <option class="odd" value="Weapon">Weapon</option>
+                    <option class="even" value="Armor">Armor</option>
+                    <option class="odd" value="Boots">Boots</option>
+                    <option class="even" value="Shield">Shield</option>
+                </select>
+            </p>
+            <p>
+                <span id="chooseEquip">Cost to upgrade:</span> "999" materials
+                <button id="upgradeEquip" class="button button_skyblue">Upgrade</button>
+            </p>
+        </div>
+
+        <!-- About tab -->
+        <div id="about" class="tabcontent">
+            <p>This game was made as a hobby project to showcase some simple Javascript compentencies. It includes:</p>
+            <ul>
+                <li>A simple tab-based inteface.</li>
+                <li>Built-in functions such as Math.floor() and Math.random().</li>
+                <li>Custom functions for loading data and showing a modal onload and dynamically changing the HTML.</li>
+                <li>Lists of objects encapsulating the monsters, player, and combat data.</li>
+                <li>Lists for handling monsters and combat rounds.</li>
+                <li>A custom implemented upgrade system for stats as well as equipment.</li>
+            </ul>
+            <p>The full source can be found at <a href="https://github.com/Norhede/javascript_rpg">my Github repository</a>.</p>
+        </div>
+
+        <!-- Scripts-->
+        <script type="text/javascript" src="js/character.js"></script>
+        <script type="text/javascript" src="js/combat.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/monsters.js"></script>
+        <script type="text/javascript" src="js/upgrades.js"></script>
+    </body>
+</html>

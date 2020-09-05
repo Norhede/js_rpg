@@ -1,0 +1,54 @@
+User Interface
+--------------
+
+Tabs:
+
+- Home
+    Description of the game, basic functionality
+- Character
+    Character overview, stats, equipment, crafting drops
+- Combat
+    Overview over all levels with max stats, different buttons for normal & special monsters
+    Result shows up at the bottom once the button has been clicked and combat has been calculated
+- Stat & Item Upgrades
+    Split between stat and item upgrades, either split vertically or horizontally
+- Technical Description
+    Complete description of the tehcnical approach, including descriptions of data structures
+
+Character
+---------
+
+- Character Information
+    Name, Level
+- Stats
+    Attack Power, Defence Power, Attack Speed, Health Points
+- Equipment
+    Weapon, Armor, Boots, Shield 
+
+Monster
+-------
+
+3 or 4 different monsters per level, a rare one with drops used for upgrading equipment
+All 3 monsters/level have different max stats, special monster maxing all stats for the level
+The one with highest Attack Speed has lowest Attack&Defence but highest Health
+Start with 5 levels
+
+Combat
+------
+
+One of two ideas:
+
+- 1
+    Show every round result and end result - requires more space, but shows more raw data through
+    individual hits and health left for every round
+- 2
+    Show all combat stats at once, total combat calculated and pull stats from that, including
+    number of rounds, average hit, 
+
+Upgrades
+--------
+
+- Stats
+    Upgrading stats by using exp gained from combat, formula tbd
+- Equipment
+    Upgrading equipment by using special drops gained from special monsters, formula tbd 
