@@ -1,23 +1,33 @@
-const statUpgradeCosts = {
-    2: 5,
-    3: 15,
-    4: 30,
-    5: 50,
-    6: 75,
-    7: 105,
-    8: 140,
-    9: 180,
-    10: 225
-}
+const statUpgradeCosts = [5, 15, 30, 50, 75, 105, 140, 180, 225];
 
-const equipUpgradeCosts = {
-    2: 2,
-    3: 6,
-    4: 12,
-    5: 20,
-    6: 30,
-    7: 42,
-    8: 56,
-    9: 72,
-    10: 90
+const equipUpgradeCosts = [2, 6, 12, 20, 30, 42, 56, 72, 90];
+
+function calculateStatCost() {
+    let statToUpgrade = document.getElementById("statUpgradeSelect").value;
+    document.getElementById("chosenStat").innerHTML = statToUpgrade;
+    document.getElementById("upgradeStat").innerHTML = "Upgrade " + statToUpgrade;
+    switch(statToUpgrade) {
+        case 'Attack Power':
+            let currentAttackPowerLevel = player.attack_power_level;
+            let nextAttackCost = statUpgradeCosts[currentAttackPowerLevel-1];
+            document.getElementById("upgradeCost").innerHTML = nextAttackCost;
+            break;
+        case 'Defence Power':
+            let currentDefencePowerLevel = player.defence_power_level;
+            let nextDefenceCost = statUpgradeCosts[currentDefencePowerLevel-1];
+            document.getElementById("upgradeCost").innerHTML = nextDefenceCost;
+            break;
+        case 'Attack Speed':
+            let currentAttackSpeedLevel = player.attack_speed_level;
+            let nextSpeedCost = statUpgradeCosts[currentAttackSpeedLevel-1];
+            document.getElementById("upgradeCost").innerHTML = nextSpeedCost;
+            break;
+        case 'Health Points':
+            let currentHealthPointsLevel = player.health_points_level;
+            let nextHealthCost = statUpgradeCosts[currentHealthPointsLevel-1];
+            document.getElementById("upgradeCost").innerHTML = nextHealthCost;
+            break;
+        default:
+            document.getElementById("upgradeCost").innerHTML = 'Something wrong';
+    }
 }

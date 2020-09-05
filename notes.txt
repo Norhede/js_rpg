@@ -52,3 +52,11 @@ Upgrades
     Upgrading stats by using exp gained from combat, formula tbd
 - Equipment
     Upgrading equipment by using special drops gained from special monsters, formula tbd 
+
+
+Git commands
+------------
+
+git add .
+git commit -m "Commit message"
+git push origin master

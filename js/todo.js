@@ -13,11 +13,11 @@
 
 //      CHARACTER
 // DONE! (04-09-2020) Create a character.js file
-// DONE! (04-09-2020) Create a Character object containing variables for name, level, attack_power, defense_power, attack_speed, health_points, materials
+// DONE! (04-09-2020) Create a Character object containing variables for name, level, attack_power, defence_power, attack_speed, health_points, materials
 
 //      MONSTER
 // DONE! (04-09-2020) Create a monster.js file
-// DONE! (04-09-2020) Create a Monster object containing variables for name, level, attack_power, defense_power, attack_speed, health_points, exp_gain
+// DONE! (04-09-2020) Create a Monster object containing variables for name, level, attack_power, defence_power, attack_speed, health_points, exp_gain
 // DONE! (04-09-2020) Create arrays for each level with all the different monsters
 // TODO Create individual values for the monsters
 

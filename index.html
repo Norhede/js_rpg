@@ -44,8 +44,8 @@
                     <td class="tableRight" id="characterAttackPowerId"></td>
                 </tr>
                 <tr>
-                    <td class="tableLeft">Defense Power:</td>
-                    <td class="tableRight" id="characterDefensePowerId"></td>
+                    <td class="tableLeft">Defence Power:</td>
+                    <td class="tableRight" id="characterDefencePowerId"></td>
                 </tr>
                 <tr>
                     <td class="tableLeft">Attack Speed:</td>
@@ -115,16 +115,16 @@
         <div id="itemStatUpgrades" class="tabcontent">
             <p>You have <span id="combatExperienceTotalId">?</span> exp</p>
             <p>
-                <select id="statUpgradeSelect" onchange="switchStat()">
+                <select id="statUpgradeSelect" onchange="calculateStatCost()">
                     <option class="even" value="default" disabled selected hidden>Upgrade stat:</option>
                     <option class="odd" value="Attack Power">Attack Power</option>
-                    <option class="even" value="Defense Power">Defense Power</option>
+                    <option class="even" value="Defence Power">Defence Power</option>
                     <option class="odd" value="Attack Speed">Attack Speed</option>
                     <option class="even" value="Health Points">Health Points</option>
                 </select>
             </p>
             <p>
-                <span id="chooseStat">Cost to upgrade:</span> "999" exp
+                Cost to upgrade <span id="chosenStat"></span>: <span id="upgradeCost"></span> exp
                 <button id="upgradeStat" class="button button_skyblue">Upgrade</button>
             </p>
             <p>You have <span id="combatMaterial1Id"></span> material1, <span id="combatMaterial2Id"></span> material2, <span id="combatMaterial3Id"></span> material3, <span id="combatMaterial4Id"></span> material4</p>

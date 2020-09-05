@@ -3,7 +3,7 @@ function populateData() {
     document.getElementById("playerNameId").innerHTML = player.name;
     document.getElementById("characterLevelId").innerHTML = player.level;
     document.getElementById("characterAttackPowerId").innerHTML = player.attack_power;
-    document.getElementById("characterDefensePowerId").innerHTML = player.defence_power;
+    document.getElementById("characterDefencePowerId").innerHTML = player.defence_power;
     document.getElementById("characterAttackSpeedId").innerHTML = player.attack_speed;
     document.getElementById("characterHealthPointsId").innerHTML = player.health_points;
     document.getElementById("characterExperienceId").innerHTML = player.exp;
@@ -41,10 +41,4 @@ function openTab(evt, tabName) {
     }
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
-}
-
-function switchStat() {
-    let x = document.getElementById("statUpgradeSelect").value;
-    document.getElementById("chooseStat").innerHTML = "Cost to upgrade " + x + ":";
-    document.getElementById("upgradeStat").innerHTML = "Upgrade " + x;
 } 
